@@ -326,6 +326,8 @@ public function calculator()
     public function logout(Request $request)
 {
     $request->session()->flush();
+    session()->invalidate();
+    session()->regenerateToken();
 
     return redirect('/shopkeeper/login')
             ->with('success', 'Logged out successfully.');

@@ -253,6 +253,9 @@ public function delete($id)
     public function logout(Request $request)
 {
     $request->session()->flush();
+    session()->invalidate();
+    session()->regenerateToken();
+
 
     return redirect('/admin/login')
             ->with('success', 'Logged out successfully.');

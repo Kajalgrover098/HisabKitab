@@ -58,11 +58,10 @@ public function loginPost(Request $request)
 }
 
     // Dashboard
-    public function dashboard()
-    {
-        return view('admin.dashboard');
-    }
-public function register()
+    public function index()
+{
+    return view('admin.dashboard');
+}public function register()
 {
     return view('admin.register');
 }

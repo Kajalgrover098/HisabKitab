@@ -19,10 +19,63 @@ Route::get('/shop/register', [ShopController::class, 'register'])->name('shop.re
 
 Route::post('/shop/register', [ShopController::class, 'registerPost'])->name('shop.register.post');
 
-Route::middleware(['nocache'])->group(function(){
+Route::get('/shopkeeper/dashboard', [ShopController::class, 'dashboard'])
+    ->name('shop.dashboard');
 
-    Route::get('/shopkeeper/dashboard', [ShopController::class,'index']);
-    
+Route::get('/shop/logout', [ShopController::class, 'logout'])->name('shop.logout');
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
+
+Route::post('/admin/login', [AdminController::class, 'loginPost'])->name('admin.login.post');
+
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
+Route::get('/admin/register',[AdminController::class,'register'])->name('admin.register');
+
+Route::post('/admin/register',[AdminController::class,'registerPost'])->name('admin.register.post');
+Route::get('/admin/addnew', [AdminController::class, 'addNew'])
+    ->name('admin.addnew');
+Route::post('/admin/addnew', [AdminController::class, 'storeShopkeeper'])->name('admin.storeShopkeeper');
+Route::get('/admin/shopkeepers', [AdminController::class, 'shopkeepers'])->name('shopkeepers');
+Route::get('/admin/edit_shopkeeper/{id}', [AdminController::class, 'edit'])->name('shopkeepers.edit');
+
+Route::post('/admin/update/{id}', [AdminController::class, 'update'])->name('shopkeepers.update');
+Route::get('/admin/delete/{id}', [AdminController::class, 'delete'])->name('shopkeepers.delete');
+Route::post('/admin/shopkeepers/update-status', [AdminController::class, 'updateStatus'])->name('shopkeepers.updateStatus');
+Route::get('/admin/profile', [AdminController::class,'profile'])->name('admin.profile');
+
+Route::get('/admin/profile/edit', [AdminController::class,'edit'])->name('admin.profile.edit');
+
+Route::post('/admin/profile/update', [AdminController::class, 'updateProfile'])
+    ->name('admin.profile.update');
+Route::get('/admin/change-password', [AdminController::class,'changePassword'])->name('admin.password');
+
+Route::post('/admin/change-password', [AdminController::class,'updatePassword'])->name('admin.password.update');
+Route::post('/admin/change-password', [AdminController::class, 'updatePassword'])
+    ->name('admin.password.update');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  Route::get('/shopkeeper/profile', [ShopController::class, 'profile'])
@@ -91,66 +144,9 @@ Route::get('/shopkeeper/previous-records', [PreviousRecordController::class, 'in
 Route::post('/shopkeeper/previous-records/store', [PreviousRecordController::class, 'store'])
     ->name('previous.records.store');
 Route::post('/shopkeeper/previous-records/update/{id}',[PreviousRecordController::class,'update']);
-
+Route::post('/shopkeeper/previous-records/store',[PreviousRecordController::class,'store']);
 Route::get('/shopkeeper/calculator', [ShopController::class, 'calculator'])
     ->name('shopkeeper.calculator');
-
-
-
-})->name('shop.dashboard');
-
-Route::get('/shop/logout', [ShopController::class, 'logout'])->name('shop.logout');
-
-
-
-/*
-|--------------------------------------------------------------------------
-| Admin Routes
-|--------------------------------------------------------------------------
-*/
-
-Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
-
-Route::post('/admin/login', [AdminController::class, 'loginPost'])->name('admin.login.post');
-Route::get('/admin/register',[AdminController::class,'register'])->name('admin.register');
-
-Route::post('/admin/register',[AdminController::class,'registerPost'])->name('admin.register.post');
-
-Route::middleware(['nocache'])->group(function(){
-
-    Route::get('/admin/dashboard', [AdminController::class,'index']);
-   
-
-Route::get('/admin/addnew', [AdminController::class, 'addNew'])
-    ->name('admin.addnew');
-Route::post('/admin/addnew', [AdminController::class, 'storeShopkeeper'])->name('admin.storeShopkeeper');
-Route::get('/admin/shopkeepers', [AdminController::class, 'shopkeepers'])->name('shopkeepers');
-Route::get('/admin/edit_shopkeeper/{id}', [AdminController::class, 'edit'])->name('shopkeepers.edit');
-
-Route::post('/admin/update/{id}', [AdminController::class, 'update'])->name('shopkeepers.update');
-Route::get('/admin/delete/{id}', [AdminController::class, 'delete'])->name('shopkeepers.delete');
-Route::post('/admin/shopkeepers/update-status', [AdminController::class, 'updateStatus'])->name('shopkeepers.updateStatus');
-Route::get('/admin/profile', [AdminController::class,'profile'])->name('admin.profile');
-
-Route::get('/admin/profile/edit', [AdminController::class,'edit'])->name('admin.profile.edit');
-
-Route::post('/admin/profile/update', [AdminController::class, 'updateProfile'])
-    ->name('admin.profile.update');
-Route::get('/admin/change-password', [AdminController::class,'changePassword'])->name('admin.password');
-
-Route::post('/admin/change-password', [AdminController::class,'updatePassword'])->name('admin.password.update');
-Route::post('/admin/change-password', [AdminController::class, 'updatePassword'])
-    ->name('admin.password.update');
-
-
-})->name('admin.dashboard');
- Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
-
-
-
-
-
-
 
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use App\Models\Contact;
 use App\Models\Shopkeeper;
 use Illuminate\Support\Facades\Hash;
 
@@ -58,7 +59,7 @@ public function loginPost(Request $request)
 }
 
     // Dashboard
-    public function index()
+    public function dashboard()
 {
     return view('admin.dashboard');
 }public function register()
@@ -247,7 +248,12 @@ public function delete($id)
 
     return redirect()->back()->with('success', 'Shopkeeper moved to trash');
 }
+public function contactQueries()
+{
+    $contacts = Contact::latest()->paginate(10);
 
+    return view('admin.contact_queries', compact('contacts'));
+}
     // Logout
     public function logout(Request $request)
 {

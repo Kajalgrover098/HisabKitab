@@ -177,6 +177,133 @@ body{
     padding:25px;
 
 }
+/* ===========================
+   Responsive CSS
+=========================== */
+
+@media (max-width: 991px){
+
+    .content{
+        margin-left:0;
+        margin-top:65px;   /* Toggle ke niche content aa jayega */
+        padding:20px;
+    }
+
+    .page-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .page-header h2{
+        font-size:26px;
+    }
+
+    .page-header .btn{
+        width:100%;
+    }
+
+}
+
+@media (max-width: 768px){
+
+   
+
+    .content{
+        margin-left:0;
+        margin-top:65px;   /* Toggle ke niche content aa jayega */
+        padding:20px;
+    }
+
+
+
+    .page-header h2{
+        font-size:22px;
+    }
+
+    .page-header p{
+        font-size:14px;
+    }
+
+    #search{
+        height:42px;
+        font-size:14px;
+    }
+
+    .card{
+        border-radius:10px;
+    }
+
+    .table{
+        min-width:700px;
+    }
+
+    .table th,
+    .table td{
+        padding:10px;
+        font-size:14px;
+        white-space:nowrap;
+    }
+
+    .action-icon{
+        font-size:18px;
+        margin:0 5px;
+    }
+
+    .btn-success{
+        padding:8px 14px;
+        font-size:14px;
+    }
+
+    .table-responsive{
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+    }
+
+}
+
+@media (max-width: 576px){
+ .content{
+        margin-left:0;
+        margin-top:65px;   /* Toggle ke niche content aa jayega */
+        padding:20px;
+    }
+    .page-header{
+        gap:10px;
+    }
+
+    .page-header h2{
+        font-size:20px;
+    }
+
+    .page-header p{
+        font-size:13px;
+    }
+
+    #search{
+        font-size:13px;
+    }
+
+    .btn-success{
+        width:100%;
+    }
+
+    .table th,
+    .table td{
+        font-size:13px;
+        padding:8px;
+    }
+
+    .action-icon{
+        font-size:16px;
+        margin:0 3px;
+    }
+
+    .no-data{
+        font-size:15px;
+    }
+
+}
 
 </style>
 </head>

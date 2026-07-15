@@ -4,7 +4,8 @@
 <style>
 
 body{
-    background:#f4f6f9;
+    background:#f5f7f6;
+    font-family:'Segoe UI',sans-serif;
 }
 
 .content{
@@ -13,102 +14,230 @@ body{
 }
 
 .profile-card{
-
-    max-width:850px;
+    max-width:700px;
     margin:auto;
     border:none;
-    border-radius:15px;
+    border-radius:12px;
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
+    background:#fff;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
 }
 
 .profile-header{
-
-    background:linear-gradient(135deg,#198754,#157347);
-    color:white;
-    padding:35px;
+   background:rgba(54,107,76,.68);
+    padding:25px;
     text-align:center;
-
 }
 
 .profile-avatar{
-
-    width:120px;
-    height:120px;
+    width:90px;
+    height:90px;
     border-radius:50%;
-    background:white;
+    background:#fff;
     color:#198754;
     display:flex;
-    align-items:center;
     justify-content:center;
-    font-size:55px;
+    align-items:center;
+    font-size:38px;
     margin:auto;
-    margin-bottom:15px;
-
+    margin-bottom:12px;
 }
 
 .profile-header h3{
-
-    margin-bottom:5px;
+    color:#fff;
+    margin:0;
+    font-size:24px;
     font-weight:600;
-
 }
 
 .badge-role{
-
-    background:white;
+    margin-top:8px;
+    display:inline-block;
+    background:#fff;
     color:#198754;
-    font-size:14px;
-    padding:8px 18px;
+    padding:5px 15px;
     border-radius:20px;
-
+    font-size:13px;
+    font-weight:600;
 }
 
 .profile-body{
-
-    padding:30px;
-
+    padding:25px;
 }
 
-.info-row{
+.profile-body .card{
+    border:none !important;
+    box-shadow:none !important;
+}
 
-    display:flex;
-    justify-content:space-between;
-    padding:15px 0;
+.row.mb-4{
     border-bottom:1px solid #eee;
-
+    padding:12px 0;
+    margin-bottom:0 !important;
 }
 
-.info-title{
+.row:last-child{
+    border-bottom:none;
+}
 
+.col-md-4{
     font-weight:600;
-    color:#555;
-
+    color:#666;
 }
 
-.info-value{
-
+.col-md-8{
     color:#222;
-
 }
 
 .profile-footer{
-
-    padding:25px;
+    padding:20px;
+    border-top:1px solid #eee;
     display:flex;
     justify-content:center;
-    gap:15px;
-
+    gap:12px;
 }
 
 .btn{
+    border-radius:8px;
+    padding:9px 22px;
+}
 
-    border-radius:10px;
-    padding:10px 25px;
+.modal-content{
+    border-radius:12px;
+}
+
+.form-control{
+    border-radius:8px;
+}
+/* ================= Responsive ================= */
+
+@media (max-width: 991px){
+
+    .content{
+        margin-left:0;
+        padding:20px;
+    }
+
+    .profile-card{
+        max-width:100%;
+    }
+
+    .profile-body{
+        padding:20px;
+    }
+
+    .profile-footer{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .profile-footer .btn{
+        width:100%;
+    }
 
 }
 
+@media (max-width: 767px){
+
+    .content{
+        padding:15px;
+    }
+
+    .profile-header{
+        padding:20px 15px;
+    }
+
+    .profile-avatar{
+        width:75px;
+        height:75px;
+        font-size:30px;
+    }
+
+    .profile-header h3{
+        font-size:20px;
+    }
+
+    .badge-role{
+        font-size:12px;
+        padding:4px 12px;
+    }
+
+    .profile-body{
+        padding:15px;
+    }
+
+    .row.mb-4{
+        display:block;
+        padding:10px 0;
+    }
+
+    .col-md-4{
+        margin-bottom:5px;
+        font-size:14px;
+    }
+
+    .col-md-8{
+        font-size:14px;
+        word-break:break-word;
+    }
+
+    .modal-dialog{
+        margin:10px;
+    }
+
+    .modal-body{
+        padding:20px;
+    }
+
+    .modal-footer{
+        flex-direction:column;
+    }
+
+    .modal-footer .btn{
+        width:100%;
+    }
+
+}
+
+@media (max-width: 480px){
+
+    .content{
+        padding:10px;
+    }
+
+    .profile-card{
+        border-radius:10px;
+    }
+
+    .profile-header{
+        padding:18px 12px;
+    }
+
+    .profile-avatar{
+        width:65px;
+        height:65px;
+        font-size:26px;
+    }
+
+    .profile-header h3{
+        font-size:18px;
+    }
+
+    .btn{
+        width:100%;
+        padding:10px;
+        font-size:14px;
+    }
+
+    .form-control{
+        font-size:14px;
+    }
+
+    textarea.form-control{
+        min-height:90px;
+    }
+
+}
 </style>
 
 
@@ -137,9 +266,9 @@ Administrator
 
 <div class="profile-body">
 
-    <div class="card border-0 shadow-sm mx-auto" style="max-width:650px;border-radius:12px;">
+   <div class="profile-body">
 
-        <div class="card-body">
+    <div class="mx-auto" style="max-width:600px;">
 
             <div class="row mb-4 align-items-center">
 

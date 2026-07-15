@@ -24,11 +24,11 @@ Swal.fire({
 </script>
 
 @endif
+<style>
 
-    <style>
-       
-      body{
+body{
     background:#eef2f7;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
 }
 
 .form-card{
@@ -38,11 +38,12 @@ Swal.fire({
     border-radius:18px;
     overflow:hidden;
     box-shadow:0 12px 30px rgba(0,0,0,.12);
+    background:#fff;
 }
 
 .card-header{
     background:linear-gradient(90deg,#198754,#157347);
-    color:white;
+    color:#fff;
     padding:20px 25px;
 }
 
@@ -53,11 +54,13 @@ Swal.fire({
 .form-label{
     font-weight:600;
     margin-bottom:8px;
+    color:#333;
 }
 
 .form-control{
     border-radius:10px;
     padding:10px 15px;
+    border:1px solid #ced4da;
 }
 
 .form-control:focus{
@@ -72,11 +75,13 @@ Swal.fire({
 .btn-success{
     padding:10px 28px;
     border-radius:10px;
+    font-weight:600;
 }
 
 .btn-secondary{
     padding:10px 25px;
     border-radius:10px;
+    font-weight:600;
 }
 
 .error{
@@ -93,12 +98,158 @@ Swal.fire({
 
 .page-title h2{
     font-weight:700;
+    color:#212529;
 }
 
 .page-title p{
-    color:gray;
+    color:#6c757d;
 }
-    </style>
+
+/* ===========================
+        Responsive CSS
+=========================== */
+
+@media (max-width:991px){
+
+     .content{
+        margin-left:0;
+        margin-top:65px;   /* Toggle ke niche content aa jayega */
+        padding:20px;
+    }
+
+    .form-card{
+        max-width:95%;
+        margin:25px auto;
+    }
+
+    .card-body{
+        padding:25px;
+    }
+
+}
+
+@media (max-width:768px){
+ .content{
+        margin-left:0;
+        margin-top:65px;   /* Toggle ke niche content aa jayega */
+        padding:20px;
+    }
+    .page-title{
+        margin-top:15px;
+        margin-bottom:15px;
+        padding:0 10px;
+    }
+
+    .page-title h2{
+        font-size:24px;
+    }
+
+    .page-title p{
+        font-size:14px;
+    }
+
+    .form-card{
+        max-width:100%;
+        margin:20px 10px;
+        border-radius:14px;
+    }
+
+    .card-header{
+        padding:16px 20px;
+        text-align:center;
+    }
+
+    .card-header h4,
+    .card-header h5{
+        font-size:20px;
+        margin:0;
+    }
+
+    .card-body{
+        padding:20px;
+    }
+
+    .form-label{
+        font-size:14px;
+    }
+
+    .form-control{
+        font-size:14px;
+        padding:10px 12px;
+    }
+
+    .btn-success,
+    .btn-secondary{
+        width:100%;
+        margin-bottom:10px;
+    }
+
+}
+
+@media (max-width:576px){
+     .content{
+        margin-left:0;
+        margin-top:65px;   /* Toggle ke niche content aa jayega */
+        padding:20px;
+    }
+
+    body{
+        padding:8px;
+    }
+
+    .page-title h2{
+        font-size:20px;
+    }
+
+    .page-title p{
+        font-size:13px;
+    }
+
+    .form-card{
+        margin:10px 0;
+        border-radius:12px;
+    }
+
+    .card-header{
+        padding:15px;
+    }
+
+    .card-header h4,
+    .card-header h5{
+        font-size:18px;
+    }
+
+    .card-body{
+        padding:15px;
+    }
+
+    .form-label{
+        font-size:13px;
+    }
+
+    .form-control{
+        font-size:13px;
+        padding:9px 10px;
+    }
+
+    textarea.form-control{
+        min-height:100px;
+    }
+
+    .btn-success,
+    .btn-secondary{
+        width:100%;
+        font-size:14px;
+        padding:10px;
+    }
+
+    .error{
+        font-size:13px;
+    }
+
+}
+
+</style>
 </head>
 <body>
 

@@ -163,3 +163,5 @@ Route::get('/contact', [ContactController::class,'index'])
 Route::post('/contact', [ContactController::class,'store'])
     ->name('contact.store');
     Route::view('/about', 'about')->name('about');
+    Route::get('/admin/contact-queries', [AdminController::class, 'contactQueries'])
+    ->name('admin.contact.queries');

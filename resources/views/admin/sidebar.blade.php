@@ -308,10 +308,12 @@ body{
             <span>View Shopkeepers</span>
         </a>
 
-        <a href="#">
-            <i class="fa-solid fa-chart-column"></i>
-            <span>Queries</span>
-        </a>
+        
+    <a href="{{ route('admin.contact.queries') }}">
+        <i class="fas fa-envelope"></i>
+        Contact Queries
+    </a>
+
 
     </div>
 
